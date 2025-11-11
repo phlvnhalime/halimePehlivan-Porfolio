@@ -91,12 +91,33 @@ const toggleEntry = (id: number) => {
 <template>
   <section class="timeline-page software-timeline">
     <header class="timeline-header">
-      <p class="timeline-subtitle">Software Journey</p>
-      <h1>From Mechanical Curiosity to Immersive Interfaces</h1>
-      <p class="timeline-intro">
-        A chronological path showing how code, visualization, and engineering merged into one craft.
-        Each milestone reveals the projects, tools, and lessons that shaped my approach.
-      </p>
+      <div class="timeline-heading">
+        <p class="timeline-subtitle">Software Journey</p>
+        <h1>Software Developer</h1>
+        <p class="timeline-intro">
+          Crafting immersive web experiences with Vue, TypeScript, and modern tooling—bridging data,
+          design, and performance while staying rooted in engineering fundamentals.
+        </p>
+      </div>
+
+      <div class="timeline-cta">
+        <a href="mailto:phlvnhalime@outlook.com" class="primary-link">Start a Project</a>
+        <a
+          href="https://github.com/phlvnhalime"
+          target="_blank"
+          rel="noopener"
+          class="secondary-link"
+        >
+          GitHub
+        </a>
+      </div>
+
+      <ul class="timeline-focus">
+        <li>Single-page apps with Vue 3 & Pinia</li>
+        <li>TypeScript-first component systems</li>
+        <li>Data visualization & storytelling</li>
+        <li>CI/CD, testing, and performance</li>
+      </ul>
     </header>
 
     <div class="timeline-grid">

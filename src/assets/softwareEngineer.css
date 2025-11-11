@@ -8,18 +8,21 @@
   display: flex;
   flex-direction: column;
 }
+
 .timeline-header {
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
+  max-width: min(980px, 92vw);
+  margin: 0 auto clamp(3rem, 6vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.2rem);
+  text-align: left;
 }
 
-.timeline-header h1 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+.timeline-heading h1 {
+  font-size: clamp(2.4rem, 5.5vw, 3.6rem);
   color: #caa9ff;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  margin-bottom: 1.5rem;
 }
 
 .timeline-subtitle {
@@ -34,6 +37,67 @@
   color: rgba(242, 233, 255, 0.82);
   line-height: 1.8;
   font-size: 1.05rem;
+}
+
+.timeline-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.timeline-cta .primary-link,
+.timeline-cta .secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.timeline-cta .primary-link {
+  background: linear-gradient(135deg, rgba(202, 169, 255, 0.95), rgba(0, 255, 255, 0.75));
+  color: #120822;
+  box-shadow:
+    0 0 15px rgba(202, 169, 255, 0.35),
+    0 0 40px rgba(0, 255, 255, 0.2);
+}
+
+.timeline-cta .secondary-link {
+  border: 1px solid rgba(202, 169, 255, 0.5);
+  color: rgba(242, 233, 255, 0.85);
+  background: transparent;
+}
+
+.timeline-cta .primary-link:hover,
+.timeline-cta .secondary-link:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 25px rgba(202, 169, 255, 0.25),
+    0 0 30px rgba(0, 255, 255, 0.25);
+}
+
+.timeline-focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-focus li {
+  background: rgba(22, 16, 42, 0.55);
+  border: 1px solid rgba(202, 169, 255, 0.2);
+  color: rgba(242, 233, 255, 0.85);
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
 }
 
 .timeline-grid {
@@ -188,6 +252,15 @@
 @media (max-width: 768px) {
   .timeline-page {
     padding: 3rem 1.5rem 4rem;
+  }
+
+  .timeline-header {
+    gap: 1.5rem;
+  }
+
+  .timeline-cta {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .timeline-grid {
