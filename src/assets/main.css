@@ -1,0 +1,31 @@
+@import './base.css';
+
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: white;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #181818;
+  }
+}

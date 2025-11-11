@@ -1,0 +1,215 @@
+.timeline-page {
+  min-height: 100vh;
+  padding: clamp(3rem, 6vw, 6rem);
+  background:
+    radial-gradient(circle at top left, rgba(138, 43, 226, 0.12), transparent 55%) no-repeat,
+    linear-gradient(135deg, #070513, #14102b);
+  color: #f2e9ff;
+  display: flex;
+  flex-direction: column;
+}
+.timeline-header {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.timeline-header h1 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: #caa9ff;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-subtitle {
+  font-size: 0.95rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(0, 255, 255, 0.65);
+  margin-bottom: 1rem;
+}
+
+.timeline-intro {
+  color: rgba(242, 233, 255, 0.82);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.timeline-grid {
+  position: relative;
+  max-width: min(960px, 90vw);
+  margin: clamp(4rem, 7vw, 6rem) auto 0 auto;
+  padding: 2rem 0 6rem;
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.timeline-grid::before {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  bottom: -3rem;
+  left: 50%;
+  width: 3px;
+  background: linear-gradient(180deg, rgba(202, 169, 255, 0.5), rgba(0, 255, 255, 0.4));
+  transform: skewY(-15deg);
+  transform-origin: top;
+  opacity: 0.65;
+}
+
+.timeline-entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.timeline-entry.is-even {
+  justify-items: end;
+  transform: translateX(-6%);
+}
+
+.timeline-entry:not(.is-even) {
+  justify-items: start;
+  transform: translateX(6%);
+}
+
+.timeline-entry .timeline-body {
+  max-width: clamp(320px, 40vw, 380px);
+  background: rgba(22, 16, 42, 0.64);
+  border: 1px solid rgba(202, 169, 255, 0.2);
+  border-radius: 14px;
+  padding: clamp(1.4rem, 4vw, 1.8rem);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(202, 169, 255, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.timeline-entry .timeline-body:hover {
+  transform: translateY(-6px);
+}
+
+.timeline-entry.is-even .timeline-body {
+  text-align: right;
+}
+
+.timeline-entry header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-entry h2 {
+  font-size: 1.35rem;
+  color: #efe3ff;
+}
+
+.timeline-context {
+  font-size: 0.9rem;
+  color: rgba(242, 233, 255, 0.6);
+}
+
+.timeline-year {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(0, 255, 255, 0.7);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.timeline-summary {
+  color: rgba(242, 233, 255, 0.82);
+  line-height: 1.6;
+}
+
+.timeline-details {
+  margin-top: 0.75rem;
+  color: rgba(242, 233, 255, 0.75);
+  line-height: 1.6;
+}
+
+.timeline-toggle {
+  margin-top: 1rem;
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(202, 169, 255, 0.6);
+  background: rgba(15, 18, 38, 0.8);
+  color: rgba(242, 233, 255, 0.9);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.timeline-toggle:hover {
+  background: rgba(202, 169, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.timeline-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transform: translateY(0.35rem);
+}
+
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(202, 169, 255, 0.9), rgba(0, 255, 255, 0.7));
+  box-shadow: 0 0 18px rgba(202, 169, 255, 0.45);
+  position: relative;
+}
+
+.timeline-entry.is-even .timeline-node {
+  flex-direction: row-reverse;
+}
+
+.timeline-fade-enter-active,
+.timeline-fade-leave-active {
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.timeline-fade-enter-from,
+.timeline-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+@media (max-width: 768px) {
+  .timeline-page {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .timeline-grid {
+    margin-top: 3rem;
+    gap: 2.5rem;
+  }
+
+  .timeline-grid::before {
+    left: 12px;
+    transform: skewY(-5deg);
+  }
+
+  .timeline-entry,
+  .timeline-entry.is-even,
+  .timeline-entry:not(.is-even) {
+    grid-template-columns: auto 1fr;
+    justify-items: start;
+    transform: none;
+  }
+
+  .timeline-entry .timeline-body,
+  .timeline-entry.is-even .timeline-body {
+    text-align: left;
+  }
+}

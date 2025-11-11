@@ -1,0 +1,532 @@
+/* Genel sahne: Beyin konsepti için tam ekran arka plan ve hizalama */
+.brain-concept-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  background-image: url('@/assets/Background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Beyin görselini ortada tutar ve katmanlı öğeleri hizalar */
+.brain-symbol-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* About butonunu merkeze yerleştirip görünüm/etkileşim ekler */
+.center-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.75rem 2.25rem;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 255, 255, 0.45);
+  border-radius: 999px;
+  color: rgba(220, 230, 255, 0.95);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 15;
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.4),
+    0 0 40px rgba(138, 43, 226, 0.35);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Buton üzerine gelince büyüme ve parlama efekti sağlar */
+.center-button:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow:
+    0 0 28px rgba(0, 255, 255, 0.6),
+    0 0 45px rgba(138, 43, 226, 0.5);
+  border-color: rgba(138, 43, 226, 0.8);
+}
+
+/* Klavye odağında erişilebilirlik çerçevesi ekler */
+.center-button:focus-visible {
+  outline: 3px solid rgba(0, 255, 255, 0.7);
+  outline-offset: 4px;
+}
+
+/* Beyin görselinin boyutunu ve parlaklığını ayarlar */
+.brain-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 3;
+  filter: brightness(1.2);
+}
+
+/* Pulsating glow effect */
+/* Beynin etrafındaki aydınlatma katmanlarının ortak özellikleri */
+.brain-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Dış glow katmanı: geniş çaplı mor/siyan parıltı ve nabız animasyonu */
+.brain-glow-outer {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(138, 43, 226, 0.6) 0%,
+    rgba(0, 255, 255, 0.4) 50%,
+    transparent 70%
+  );
+  z-index: 1;
+  animation: pulse-outer 3s ease-in-out infinite;
+}
+
+/* İç glow katmanı: daha küçük çaplı parıltı ve nabız animasyonu */
+.brain-glow-inner {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 255, 0.5) 0%,
+    rgba(138, 43, 226, 0.3) 50%,
+    transparent 70%
+  );
+  z-index: 2;
+  animation: pulse-inner 2s ease-in-out infinite;
+}
+
+@keyframes pulse-outer {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+}
+
+@keyframes pulse-inner {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Data stream particles emitting from brain */
+/* Beyinden çıkan veri parçacıklarının temel stili */
+.data-stream {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #00ffff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff;
+  z-index: 4;
+  animation: stream-pulse 2s ease-in-out infinite;
+}
+
+@keyframes stream-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Label wrappers */
+/* Sol/sağ etiket alanlarının konumlandırılması */
+.label-wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 15;
+  display: flex;
+  align-items: center;
+}
+
+/* Sol etiketin beyinle bağlantısını sağlamak için konum ayarı */
+.left-label-wrapper {
+  left: 5%;
+  flex-direction: row-reverse;
+
+  transition: transform 0.45s ease;
+}
+
+.left-label-wrapper:hover {
+  transform: translate(-8px, -12px);
+}
+
+/* Sağ etiket için hizalama ayarı */
+.right-label-wrapper {
+  right: 5%;
+  flex-direction: row;
+
+  transition: transform 0.45s ease;
+}
+
+.right-label-wrapper:hover {
+  transform: translate(8px, -12px);
+}
+
+/* Data lines connecting to brain */
+/* Etiketleri beyne bağlayan çizgilerin görünümü ve animasyonu */
+.data-line {
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 255, 255, 0.3) 20%,
+    rgba(138, 43, 226, 0.6) 50%,
+    rgba(0, 255, 255, 0.3) 80%,
+    transparent 100%
+  );
+  position: relative;
+  animation: data-flow 3s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Sol bağlantı çizgisinin dönüş ekseni ayarı */
+.left-line {
+  margin-right: 20px;
+  transform-origin: right center;
+}
+
+/* Sağ bağlantı çizgisinin dönüş ekseni ayarı */
+.right-line {
+  margin-left: 20px;
+  transform-origin: left center;
+}
+
+@keyframes data-flow {
+  0%,
+  100% {
+    opacity: 0.4;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    opacity: 1;
+    box-shadow:
+      0 0 20px rgba(0, 255, 255, 0.8),
+      0 0 30px rgba(138, 43, 226, 0.6);
+  }
+}
+
+/* Text labels */
+/* Etiket bloklarının genel tipografi ve parlaklık ayarları */
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 10px rgba(0, 255, 255, 0.8),
+    0 0 20px rgba(138, 43, 226, 0.6);
+  animation: label-pulse 2.5s ease-in-out infinite;
+  position: relative;
+}
+
+/* Etiket metninin tek satırda kalmasını sağlar */
+.label-text {
+  white-space: nowrap;
+}
+
+/* Sol etiketi sağa hizalar ve içerikleri sağda toplar */
+.left-label {
+  text-align: right;
+  align-items: flex-end;
+}
+
+/* Sağ etiketi sola hizalar ve içerikleri solda tutar */
+.right-label {
+  text-align: left;
+  align-items: flex-start;
+}
+
+/* Etiket içindeki harekete geçirici butonun görünümü */
+.label-button {
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.8), rgba(138, 43, 226, 0.8));
+  color: #0a0a0a;
+  font-size: 0.8em;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow:
+    0 0 10px rgba(0, 255, 255, 0.6),
+    0 0 20px rgba(138, 43, 226, 0.6);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+/* Buton üzerine gelince yükselme/parlama efekti verir */
+.label-button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 15px rgba(0, 255, 255, 0.9),
+    0 0 25px rgba(138, 43, 226, 0.9);
+}
+
+/* Klavye odağında görünür odak çizgisi sağlar */
+.label-button:focus-visible {
+  outline: 3px solid rgba(0, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+@keyframes label-pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+    text-shadow:
+      0 0 10px rgba(0, 255, 255, 0.6),
+      0 0 20px rgba(138, 43, 226, 0.4);
+  }
+  50% {
+    opacity: 1;
+    text-shadow:
+      0 0 15px rgba(0, 255, 255, 1),
+      0 0 30px rgba(138, 43, 226, 0.8),
+      0 0 40px rgba(0, 255, 255, 0.5);
+  }
+}
+
+/* Panel açıldığında arka planı karartan bulanık örtü */
+.panel-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 25;
+}
+
+/* Panel çerçevelerinin ortak yapısı ve kayarak açılan davranışı */
+.info-panel {
+  position: fixed;
+  top: 0;
+  width: min(360px, 90vw);
+  height: 100vh;
+  padding: 2.5rem 2rem;
+  background: rgba(10, 10, 20, 0.95);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow:
+    0 0 30px rgba(0, 255, 255, 0.15),
+    0 0 60px rgba(138, 43, 226, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 30;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+}
+
+/* Merkezde açılan About kartının boyutu, görünümü ve animasyonu */
+.info-panel.center-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(420px, 85vw);
+  height: auto;
+  max-height: 70vh;
+  padding: 2rem 2.5rem;
+  border-radius: 18px;
+  transform: translate(-50%, -55%) scale(0.85);
+  background: rgba(8, 12, 20, 0.95);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  box-shadow:
+    0 0 30px rgba(0, 255, 255, 0.25),
+    0 0 60px rgba(138, 43, 226, 0.25);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Sol panelin başlangıçta ekrandan dışarı konumlandırılması */
+.info-panel.left {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+/* Sağ panelin başlangıç konumu */
+.info-panel.right {
+  right: 0;
+}
+
+/* Sol panel açıldığında görünür hale gelir */
+.info-panel.is-open.left {
+  transform: translateX(0);
+}
+
+/* Sağ panel açıldığında görünür hale gelir */
+.info-panel.is-open.right {
+  transform: translateX(0);
+}
+
+/* About kartı açıldığında ortaya büyüyerek gelmesini sağlar */
+.info-panel.center-card.is-open {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Panel kapatma düğmesinin konumu ve görünümü */
+.panel-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.75rem;
+  color: rgba(0, 255, 255, 0.85);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Kapatma düğmesine gelindiğinde hafif büyüme animasyonu */
+.panel-close:hover {
+  transform: scale(1.1);
+}
+
+/* Panel başlıklarının tipografisini ayarlar */
+.panel-title {
+  font-size: 1.6rem;
+  color: rgba(0, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Panel gövde metni renk ve satır yüksekliği */
+.panel-text {
+  color: rgba(220, 230, 255, 0.85);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Panel içi madde listelerinin düzenini ayarlar */
+.panel-list {
+  display: grid;
+  gap: 0.75rem;
+  padding-left: 1.2rem;
+  color: rgba(220, 230, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+/* Liste işaretlerinin rengini marka renkleriyle uyumlu yapar */
+.panel-list li::marker {
+  color: rgba(0, 255, 255, 0.8);
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: rgba(220, 230, 255, 0.85);
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-link:hover {
+  color: rgba(0, 255, 255, 0.9);
+  transform: translateX(4px);
+}
+
+.contact-link:focus-visible {
+  outline: 2px solid rgba(0, 255, 255, 0.7);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  /* 768px altında yan panellerin genişliğini ayarlar */
+  .info-panel {
+    width: min(420px, 100vw);
+  }
+
+  /* 768px altında merkez kartı küçültür ve daha kompakt hale getirir */
+  .info-panel.center-card {
+    width: min(360px, 92vw);
+    max-height: 80vh;
+    padding: 1.75rem;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Küçük ekranlarda beyin ve glow boyutlarını azaltır */
+  .brain-symbol-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .brain-glow-outer {
+    width: 300px;
+    height: 300px;
+  }
+
+  .brain-glow-inner {
+    width: 250px;
+    height: 250px;
+  }
+
+  .data-line {
+    width: 100px;
+  }
+
+  /* Etiket boyutunu küçültür ve pozisyonları daraltır */
+  .label {
+    font-size: 0.9em;
+  }
+
+  .left-label-wrapper {
+    left: 2%;
+  }
+
+  .right-label-wrapper {
+    right: 2%;
+  }
+}
