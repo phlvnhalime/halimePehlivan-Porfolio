@@ -114,6 +114,14 @@ const toggleEntry = (id: number) => {
         >
           GitHub
         </a>
+        <a
+          href="/HalimePehlivanResume-EN-SD.pdf"
+          target="_blank"
+          rel="noopener"
+          class="primary-link"
+        >
+          View Software Developer CV (PDF)
+        </a>
       </div>
 
       <ul class="timeline-focus">

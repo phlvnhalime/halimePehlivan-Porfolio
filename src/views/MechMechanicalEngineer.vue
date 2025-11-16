@@ -82,6 +82,17 @@ const toggleEntry = (id: number) => {
       </p>
     </header>
 
+    <div class="timeline-cta">
+      <a
+        href="/HalimePehlivanResume-EN-ME.pdf"
+        target="_blank"
+        rel="noopener"
+        class="primary-link"
+      >
+        View Mechanical Engineer CV (PDF)
+      </a>
+    </div>
+
     <div class="timeline-grid">
       <article
         v-for="(entry, index) in sortedTimeline"
