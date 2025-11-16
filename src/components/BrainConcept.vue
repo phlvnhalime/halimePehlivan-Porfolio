@@ -11,7 +11,7 @@
 
     <button class="center-button" type="button" @click="toggleAboutPanel">
       <span>About Me</span>
-      <span><h1>Halime Pehlivan</h1></span>
+      <span><h3>Halime Pehlivan</h3></span>
     </button>
 
     <!-- Text labels with data line connections -->
