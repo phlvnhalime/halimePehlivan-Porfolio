@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   gap: clamp(1.5rem, 3vw, 2.2rem);
-  text-align: left;
+  text-align: center;
 }
 
 .timeline-heading h1 {
@@ -260,7 +260,7 @@
 
   .timeline-cta {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .timeline-grid {

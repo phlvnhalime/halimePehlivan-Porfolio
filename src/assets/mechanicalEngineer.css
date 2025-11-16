@@ -38,6 +38,12 @@
   font-size: 1.05rem;
 }
 
+.timeline-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .timeline-grid {
   position: relative;
   max-width: min(960px, 90vw);
