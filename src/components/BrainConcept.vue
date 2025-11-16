@@ -40,7 +40,7 @@
   <section class="info-panel center-card" :class="{ 'is-open': showAboutPanel }">
     <button class="panel-close" type="button" @click="closePanels">×</button>
     <div class="panel-hero">
-      <img class="panel-avatar" :src="photo" alt="Halime Pehlivan" />
+      <img class="panel-avatar" :src="photo" />
     </div>
     <h3 class="panel-title">About Me</h3>
     <p class="panel-text">
