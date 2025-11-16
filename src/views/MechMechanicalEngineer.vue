@@ -10,7 +10,6 @@ type TimelineEntry = {
   summary: string
   details: string
   isOpen: boolean
-  priority?: number
   links?: { label: string; url: string }[]
 }
 
@@ -26,16 +25,40 @@ const timeline = ref<TimelineEntry[]>([
     isOpen: false,
   },
   {
-    id: 104,
-    year: '2021',
-    headline: 'Graduated from Mechanical Engineering',
-    context: 'Zonguldak Bulent Ecevit University Faculty of Engineering • Turkey',
-    summary: 'Graduated from Mechanical Engineering with a Bachelor of Science degree.',
-    details: 'GPA: 2.80/4.00',
+    id: 1,
+    year: '2018',
+    headline: 'Grizu-26 Space Team',
+    context: 'Satellite systems & team-based R&D',
+    summary:
+      'Joined the Grizu-26 Space Team and contributed to payload and mission planning for competition readiness.',
+    details:
+      'Collaborated on subsystem design, documentation, and test planning for student satellite competitions.',
     isOpen: false,
   },
   {
-    id: 103,
+    id: 2,
+    year: '2019',
+    headline: 'CanSat Competition — World 2nd Place',
+    context: 'AIAA / CanSat Competition',
+    summary: 'Achieved second place globally in the CanSat Competition with Grizu-26.',
+    details:
+      'Delivered mission requirements under strict constraints—sensor integration, recovery systems, telemetry, and field tests.',
+    isOpen: false,
+    links: [{ label: 'CanSat Competition', url: 'https://www.cansatcompetition.com/' }],
+  },
+  {
+    id: 3,
+    year: '2019',
+    headline: 'TÜRKSAT Model Satellite — 1st Place',
+    context: 'TÜRKSAT Model Satellite Competition',
+    summary: 'Won first place in the national TÜRKSAT Model Satellite competition.',
+    details:
+      'Led design and validation for mission profile, airframe, and payload; emphasized reliability, documentation, and test coverage.',
+    isOpen: false,
+    links: [{ label: 'TÜRKSAT Model Satellite', url: 'https://modeluydu.turksat.com.tr/' }],
+  },
+  {
+    id: 4,
     year: '2020',
     headline:
       'Undergraduate Thesis — Improving the Thermal Performance of Heat Pipes Using Phase Change Materials (PCMs)',
@@ -47,40 +70,16 @@ const timeline = ref<TimelineEntry[]>([
     isOpen: false,
   },
   {
-    id: 100,
-    year: '2018',
-    headline: 'Grizu-26 Space Team',
-    context: 'Satellite systems & team-based R&D',
-    summary:
-      'Joined the Grizu-26 Space Team and contributed to payload and mission planning for competition readiness.',
-    details:
-      'Collaborated on subsystem design, documentation, and test planning for student satellite competitions.',
+    id: 5,
+    year: '2021',
+    headline: 'Graduated from Mechanical Engineering',
+    context: 'Zonguldak Bulent Ecevit University Faculty of Engineering • Turkey',
+    summary: 'Graduated from Mechanical Engineering with a Bachelor of Science degree.',
+    details: 'GPA: 2.80/4.00',
     isOpen: false,
   },
   {
-    id: 101,
-    year: '2019',
-    headline: 'CanSat Competition — World 2nd Place',
-    context: 'AIAA / CanSat Competition',
-    summary: 'Achieved second place globally in the CanSat Competition with Grizu-26.',
-    details:
-      'Delivered mission requirements under strict constraints—sensor integration, recovery systems, telemetry, and field tests.',
-    isOpen: false,
-    links: [{ label: 'CanSat Competition', url: 'https://www.cansatcompetition.com/' }],
-  },
-  {
-    id: 102,
-    year: '2019',
-    headline: 'TÜRKSAT Model Satellite — 1st Place',
-    context: 'TÜRKSAT Model Satellite Competition',
-    summary: 'Won first place in the national TÜRKSAT Model Satellite competition.',
-    details:
-      'Led design and validation for mission profile, airframe, and payload; emphasized reliability, documentation, and test coverage.',
-    isOpen: false,
-    links: [{ label: 'TÜRKSAT Model Satellite', url: 'https://modeluydu.turksat.com.tr/' }],
-  },
-  {
-    id: 2,
+    id: 6,
     year: '2021',
     headline: 'Mechanical Engineer',
     context: 'ONUK-BG Industrial Defense Inc • Istanbul, Turkey',
@@ -89,10 +88,9 @@ const timeline = ref<TimelineEntry[]>([
     details:
       'Automated toolpaths, reduced manual checks, and created a tracking system that cut setup errors by 40%. Introduced process documentation that made future iterations faster.',
     isOpen: false,
-    priority: 100,
   },
   {
-    id: 3,
+    id: 7,
     year: '2023',
     headline: 'Research & Development Engineer',
     context: 'TMS Industrial Refrigeration Inc • Istanbul, Turkey',
@@ -103,7 +101,7 @@ const timeline = ref<TimelineEntry[]>([
     isOpen: false,
   },
   {
-    id: 4,
+    id: 8,
     year: '2024',
     headline: 'Mechanical ↔ Software Bridge',
     context: 'Independent tools & automation',
@@ -115,14 +113,7 @@ const timeline = ref<TimelineEntry[]>([
   },
 ])
 
-const sortedTimeline = computed(() => {
-  return [...timeline.value].sort((a, b) => {
-    const pa = a.priority ?? 0
-    const pb = b.priority ?? 0
-    if (pa !== pb) return pb - pa
-    return Number(b.year) - Number(a.year)
-  })
-})
+const sortedTimeline = computed(() => timeline.value)
 
 const toggleEntry = (id: number) => {
   timeline.value = timeline.value.map((entry) =>
