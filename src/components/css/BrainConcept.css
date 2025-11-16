@@ -474,10 +474,10 @@
 }
 
 .panel-avatar {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   aspect-ratio: 1 / 1;
-  border-radius: 50%;
+  border-radius: 0;
   object-fit: cover;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
   border: 2px solid rgba(0, 255, 255, 0.35);
