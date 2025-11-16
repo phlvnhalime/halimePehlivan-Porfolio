@@ -120,12 +120,7 @@ const timeline = ref<TimelineEntry[]>([
 ])
 
 const sortedTimeline = computed(() => {
-  return [...timeline.value].sort((a, b) => {
-    const oa = a.order ?? Number.POSITIVE_INFINITY
-    const ob = b.order ?? Number.POSITIVE_INFINITY
-    if (oa !== ob) return oa - ob
-    return Number(b.year) - Number(a.year)
-  })
+  return [...timeline.value].sort((a, b) => a.id - b.id)
 })
 
 const toggleEntry = (id: number) => {
