@@ -113,7 +113,9 @@ const timeline = ref<TimelineEntry[]>([
   },
 ])
 
-const sortedTimeline = computed(() => timeline.value)
+const sortedTimeline = computed(() =>
+  [...timeline.value].sort((a, b) => Number(b.year) - Number(a.year)),
+)
 
 const toggleEntry = (id: number) => {
   timeline.value = timeline.value.map((entry) =>
