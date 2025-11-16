@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import '@/assets/mechanicalEngineer.css'
 
 type TimelineEntry = {
@@ -59,6 +59,10 @@ const timeline = ref<TimelineEntry[]>([
   },
 ])
 
+const sortedTimeline = computed(() =>
+  [...timeline.value].sort((a, b) => Number(b.year) - Number(a.year)),
+)
+
 const toggleEntry = (id: number) => {
   timeline.value = timeline.value.map((entry) =>
     entry.id === id ? { ...entry, isOpen: !entry.isOpen } : entry,
@@ -80,7 +84,7 @@ const toggleEntry = (id: number) => {
 
     <div class="timeline-grid">
       <article
-        v-for="(entry, index) in timeline"
+        v-for="(entry, index) in sortedTimeline"
         :key="entry.id"
         :class="['timeline-entry', { 'is-open': entry.isOpen, 'is-even': index % 2 === 0 }]"
       >
