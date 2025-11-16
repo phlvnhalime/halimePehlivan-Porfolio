@@ -26,7 +26,7 @@ const timeline = ref<TimelineEntry[]>([
   },
   {
     id: 103,
-    year: '2021',
+    year: '2020',
     headline:
       'Undergraduate Thesis — Improving the Thermal Performance of Heat Pipes Using Phase Change Materials (PCMs)',
     context: 'Thermal Systems • MATLAB analysis',
@@ -121,8 +121,12 @@ const toggleEntry = (id: number) => {
       <p class="timeline-subtitle">Mechanical Journey</p>
       <h1>Advanced Design & System Integration</h1>
       <p class="timeline-intro">
-        From early shop-floor lessons to complex CFD-driven projects, this timeline reveals how each
-        role layered experience in precision design, thermal systems, and process innovation.
+        Rooted in the mechanical precision of the shop floor, my engineering journey rapidly evolved
+        through high-stakes projects like Naval Defense and complex HVAC/R systems. I gained
+        rigorous experience in advanced CAD/CAE tools (CATIA, SolidWorks) , specialized analysis
+        (CFD/COMSOL) , and NC code optimization for 3-axis and 5-axis machining. This foundation in
+        precision design, thermal systems, and robust process innovation became the core expertise I
+        now leverage in software development.
       </p>
     </header>
 

@@ -38,7 +38,7 @@ const timeline = ref<TimelineEntry[]>([
   },
   {
     id: 3,
-    year: '2024',
+    year: '2025',
     headline: 'Minishell',
     context: 'C • Shell • 42 Heilbronn • Repo: https://github.com/phlvnhalime/minishell',
     summary:
@@ -56,6 +56,18 @@ const timeline = ref<TimelineEntry[]>([
       'Sorting a stack with constrained operations using an O(n log n) strategy (radix/chunk methods).',
     details:
       'Implemented two-stack operations (sa/sb/ss, pa/pb, ra/rb/rr, rra/rrb/rrr), optimized move counts, ensured norm compliance and memory safety.',
+    isOpen: false,
+  },
+  {
+    id: 6,
+    year: '2025',
+    headline: 'Philosophers',
+    context:
+      'C • Threads & Mutexes • 42 Heilbronn • Repo: https://github.com/phlvnhalime/philosophers',
+    summary:
+      'Dining Philosophers concurrency problem using POSIX threads, mutexes, and precise timing.',
+    details:
+      'Avoided deadlocks and starvation via resource ordering and monitoring; implemented per-philosopher threads, shared state protection with mutexes, and accurate millisecond timers.',
     isOpen: false,
   },
   {
@@ -87,8 +99,10 @@ const toggleEntry = (id: number) => {
         <p class="timeline-subtitle">Software Journey</p>
         <h1>Software Developer</h1>
         <p class="timeline-intro">
-          Crafting immersive web experiences with Vue, TypeScript, and modern tooling—bridging data,
-          design, and performance while staying rooted in engineering fundamentals.
+          This timeline charts an ambitious evolution: a journey where a robust foundation in
+          mechanical engineering's advanced physics and mathematical modeling transitioned into the
+          rigorous world of software development, driven by an eagerness to tackle complex
+          algorithmic challenges and specialize in high-performance systems.
         </p>
       </div>
 

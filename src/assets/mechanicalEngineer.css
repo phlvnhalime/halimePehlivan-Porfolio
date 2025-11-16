@@ -38,6 +38,24 @@
   font-size: 1.05rem;
 }
 
+.mechanical-timeline .timeline-focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mechanical-timeline .timeline-focus li {
+  background: rgba(8, 28, 38, 0.55);
+  border: 1px solid rgba(123, 212, 255, 0.2);
+  color: rgba(230, 244, 255, 0.85);
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
 .mechanical-timeline .timeline-cta {
   display: flex;
   justify-content: center;
