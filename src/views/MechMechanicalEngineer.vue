@@ -10,6 +10,7 @@ type TimelineEntry = {
   summary: string
   details: string
   isOpen: boolean
+  priority?: number
   links?: { label: string; url: string }[]
 }
 
@@ -88,6 +89,7 @@ const timeline = ref<TimelineEntry[]>([
     details:
       'Automated toolpaths, reduced manual checks, and created a tracking system that cut setup errors by 40%. Introduced process documentation that made future iterations faster.',
     isOpen: false,
+    priority: 100,
   },
   {
     id: 3,
@@ -113,9 +115,14 @@ const timeline = ref<TimelineEntry[]>([
   },
 ])
 
-const sortedTimeline = computed(() =>
-  [...timeline.value].sort((a, b) => Number(b.year) - Number(a.year)),
-)
+const sortedTimeline = computed(() => {
+  return [...timeline.value].sort((a, b) => {
+    const pa = a.priority ?? 0
+    const pb = b.priority ?? 0
+    if (pa !== pb) return pb - pa
+    return Number(b.year) - Number(a.year)
+  })
+})
 
 const toggleEntry = (id: number) => {
   timeline.value = timeline.value.map((entry) =>
