@@ -44,6 +44,45 @@
   gap: 1rem;
 }
 
+.mechanical-timeline .timeline-cta .primary-link,
+.mechanical-timeline .timeline-cta .secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.mechanical-timeline .timeline-cta .primary-link {
+  background: linear-gradient(135deg, rgba(123, 212, 255, 0.95), rgba(0, 255, 255, 0.7));
+  color: #061018;
+  box-shadow:
+    0 0 15px rgba(123, 212, 255, 0.35),
+    0 0 40px rgba(0, 255, 255, 0.2);
+  border: 1px solid rgba(123, 212, 255, 0.35);
+}
+
+.mechanical-timeline .timeline-cta .secondary-link {
+  border: 1px solid rgba(123, 212, 255, 0.45);
+  color: rgba(230, 244, 255, 0.9);
+  background: rgba(8, 28, 38, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+.mechanical-timeline .timeline-cta .primary-link:hover,
+.mechanical-timeline .timeline-cta .secondary-link:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 25px rgba(123, 212, 255, 0.25),
+    0 0 30px rgba(0, 255, 255, 0.25);
+}
+
 .mechanical-timeline .timeline-grid {
   position: relative;
   max-width: min(960px, 90vw);
