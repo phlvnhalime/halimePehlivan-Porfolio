@@ -83,12 +83,7 @@ const toggleEntry = (id: number) => {
     </header>
 
     <div class="timeline-cta">
-      <a
-        href="/HalimePehlivanResume-EN-ME.pdf"
-        target="_blank"
-        rel="noopener"
-        class="primary-link"
-      >
+      <a href="/HalimePehlivanResume-EN-ME.pdf" target="_blank" rel="noopener" class="primary-link">
         View Mechanical Engineer CV (PDF)
       </a>
     </div>
