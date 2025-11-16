@@ -10,6 +10,7 @@ type TimelineEntry = {
   summary: string
   details: string
   isOpen: boolean
+  order?: number
   links?: { label: string; url: string }[]
 }
 
@@ -45,6 +46,7 @@ const timeline = ref<TimelineEntry[]>([
       'Delivered mission requirements under strict constraints—sensor integration, recovery systems, telemetry, and field tests.',
     isOpen: false,
     links: [{ label: 'CanSat Competition', url: 'https://www.cansatcompetition.com/' }],
+    order: 11,
   },
   {
     id: 5,
@@ -56,6 +58,7 @@ const timeline = ref<TimelineEntry[]>([
       'Led design and validation for mission profile, airframe, and payload; emphasized reliability, documentation, and test coverage.',
     isOpen: false,
     links: [{ label: 'TÜRKSAT Model Satellite', url: 'https://modeluydu.turksat.com.tr/' }],
+    order: 10,
   },
   {
     id: 4,
@@ -77,6 +80,7 @@ const timeline = ref<TimelineEntry[]>([
     summary: 'Graduated from Mechanical Engineering with a Bachelor of Science degree.',
     details: 'GPA: 2.80/4.00',
     isOpen: false,
+    order: 2,
   },
   {
     id: 2,
@@ -88,6 +92,7 @@ const timeline = ref<TimelineEntry[]>([
     details:
       'Automated toolpaths, reduced manual checks, and created a tracking system that cut setup errors by 40%. Introduced process documentation that made future iterations faster.',
     isOpen: false,
+    order: 1,
   },
   {
     id: 1,
@@ -99,6 +104,7 @@ const timeline = ref<TimelineEntry[]>([
     details:
       'Performed cooling load analysis, reimagined fan-cell geometry achieving +15% efficiency, and delivered MTOs, P&IDs, and test documentation across feasibility to validation phases.',
     isOpen: false,
+    order: 3,
   },
   {
     id: 0,
@@ -113,9 +119,14 @@ const timeline = ref<TimelineEntry[]>([
   },
 ])
 
-const sortedTimeline = computed(() =>
-  [...timeline.value].sort((a, b) => Number(b.year) - Number(a.year)),
-)
+const sortedTimeline = computed(() => {
+  return [...timeline.value].sort((a, b) => {
+    const oa = a.order ?? Number.POSITIVE_INFINITY
+    const ob = b.order ?? Number.POSITIVE_INFINITY
+    if (oa !== ob) return oa - ob
+    return Number(b.year) - Number(a.year)
+  })
+})
 
 const toggleEntry = (id: number) => {
   timeline.value = timeline.value.map((entry) =>
