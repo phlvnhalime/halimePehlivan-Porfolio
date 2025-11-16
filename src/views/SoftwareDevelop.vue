@@ -49,17 +49,6 @@ const timeline = ref<TimelineEntry[]>([
   },
   {
     id: 4,
-    year: '2024',
-    headline: 'push_swap',
-    context: 'C • Algorithms • 42 Heilbronn • Repo: https://github.com/phlvnhalime/push_swap',
-    summary:
-      'Sorting a stack with constrained operations using an O(n log n) strategy (radix/chunk methods).',
-    details:
-      'Implemented two-stack operations (sa/sb/ss, pa/pb, ra/rb/rr, rra/rrb/rrr), optimized move counts, ensured norm compliance and memory safety.',
-    isOpen: false,
-  },
-  {
-    id: 6,
     year: '2025',
     headline: 'Philosophers',
     context:
@@ -72,6 +61,17 @@ const timeline = ref<TimelineEntry[]>([
   },
   {
     id: 5,
+    year: '2024',
+    headline: 'push_swap',
+    context: 'C • Algorithms • 42 Heilbronn • Repo: https://github.com/phlvnhalime/push_swap',
+    summary:
+      'Sorting a stack with constrained operations using an O(n log n) strategy (radix/chunk methods).',
+    details:
+      'Implemented two-stack operations (sa/sb/ss, pa/pb, ra/rb/rr, rra/rrb/rrr), optimized move counts, ensured norm compliance and memory safety.',
+    isOpen: false,
+  },
+  {
+    id: 6,
     year: '2024',
     headline: '42 Heilbronn',
     context: 'Peer-to-peer software engineering school • Heilbronn, Germany',

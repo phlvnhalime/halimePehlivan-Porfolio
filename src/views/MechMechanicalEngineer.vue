@@ -25,6 +25,15 @@ const timeline = ref<TimelineEntry[]>([
     isOpen: false,
   },
   {
+    id: 104,
+    year: '2021',
+    headline: 'Graduated from Mechanical Engineering',
+    context: 'Zonguldak Bulent Ecevit University Faculty of Engineering • Turkey',
+    summary: 'Graduated from Mechanical Engineering with a Bachelor of Science degree.',
+    details: 'GPA: 2.80/4.00',
+    isOpen: false,
+  },
+  {
     id: 103,
     year: '2020',
     headline:
