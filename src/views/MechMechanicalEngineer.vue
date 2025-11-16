@@ -10,19 +10,64 @@ type TimelineEntry = {
   summary: string
   details: string
   isOpen: boolean
+  links?: { label: string; url: string }[]
 }
 
 const timeline = ref<TimelineEntry[]>([
   {
-    id: 1,
+    id: 0,
     year: '2016',
-    headline: 'Hands-on Foundations',
-    context: 'Machine shop & manufacturing internships',
-    summary:
-      'First exposure to CNC machining, sheet-metal bending, and interpreting technical drawings on the shop floor.',
+    headline: 'Engineering Student',
+    context: 'Zonguldak Bulent Ecevit University Faculty of Engineering • Turkey',
+    summary: 'Bachelor of Science in Mechanical Engineering (2016–2021).',
     details:
-      'Learned the realities of tolerances, fixtures, and tooling; absorbed best practices from technicians and began sketching process improvements in notebooks.',
+      'Coursework and labs across CAD/CAE, thermodynamics, and manufacturing; project-based learning emphasizing practical engineering skills.',
     isOpen: false,
+  },
+  {
+    id: 103,
+    year: '2021',
+    headline:
+      'Undergraduate Thesis — Improving the Thermal Performance of Heat Pipes Using Phase Change Materials (PCMs)',
+    context: 'Thermal Systems • MATLAB analysis',
+    summary:
+      'Improved thermal performance of a heat pipe using phase change materials (PCM); validated via analytical models and MATLAB-based simulations.',
+    details:
+      'Modeled transient heat transfer and phase-change behavior; performed parameter sweeps (geometry, material, boundary conditions), compared baseline vs. PCM-enhanced configurations, and reported gains in temperature regulation and effective thermal resistance.',
+    isOpen: false,
+  },
+  {
+    id: 100,
+    year: '2018',
+    headline: 'Grizu-26 Space Team',
+    context: 'Satellite systems & team-based R&D',
+    summary:
+      'Joined the Grizu-26 Space Team and contributed to payload and mission planning for competition readiness.',
+    details:
+      'Collaborated on subsystem design, documentation, and test planning for student satellite competitions.',
+    isOpen: false,
+  },
+  {
+    id: 101,
+    year: '2019',
+    headline: 'CanSat Competition — World 2nd Place',
+    context: 'AIAA / CanSat Competition',
+    summary: 'Achieved second place globally in the CanSat Competition with Grizu-26.',
+    details:
+      'Delivered mission requirements under strict constraints—sensor integration, recovery systems, telemetry, and field tests.',
+    isOpen: false,
+    links: [{ label: 'CanSat Competition', url: 'https://www.cansatcompetition.com/' }],
+  },
+  {
+    id: 102,
+    year: '2019',
+    headline: 'TÜRKSAT Model Satellite — 1st Place',
+    context: 'TÜRKSAT Model Satellite Competition',
+    summary: 'Won first place in the national TÜRKSAT Model Satellite competition.',
+    details:
+      'Led design and validation for mission profile, airframe, and payload; emphasized reliability, documentation, and test coverage.',
+    isOpen: false,
+    links: [{ label: 'TÜRKSAT Model Satellite', url: 'https://modeluydu.turksat.com.tr/' }],
   },
   {
     id: 2,
@@ -74,19 +119,40 @@ const toggleEntry = (id: number) => {
   <section class="timeline-page mechanical-timeline">
     <header class="timeline-header">
       <p class="timeline-subtitle">Mechanical Journey</p>
-      <h1>Designing Systems that Keep Environments in Balance</h1>
+      <h1>Advanced Design & System Integration</h1>
       <p class="timeline-intro">
-        From early shop-floor lessons to complex CFD-driven projects, this diagonal timeline reveals
-        how each role layered experience in precision design, thermal systems, and process
-        innovation.
+        From early shop-floor lessons to complex CFD-driven projects, this timeline reveals how each
+        role layered experience in precision design, thermal systems, and process innovation.
       </p>
     </header>
 
-    <div class="timeline-cta">
-      <a href="/HalimePehlivanResume-EN-ME.pdf" target="_blank" rel="noopener" class="primary-link">
-        View Mechanical Engineer CV (PDF)
-      </a>
-    </div>
+    <h3 class="timeline-subtitle">Highlights</h3>
+    <ul class="timeline-focus">
+      <li>
+        <strong>High-Precision CAD/CAE:</strong>
+        Designing and building mechanical components for Naval Defense systems using CATIA,
+        SolidWorks, and Fusion 360.
+      </li>
+      <li>
+        <strong>CFD Analysis & Optimization:</strong>
+        Optimizing system performance via fan-cell geometry and cooling load analysis using COMSOL
+        and ANSYS (CFD).
+      </li>
+      <li>
+        <strong>Deep HVAC/R Expertise:</strong>
+        Competence in sizing cabin crane cooling units and strong proficiency across most industrial
+        refrigeration systems.
+      </li>
+      <li>
+        <strong>CNC/NC Optimization:</strong>
+        Optimizing NC programming for 3- and 5-axis systems (Siemens/Fanuc compatible) to increase
+        operational efficiency and reduce human error.
+      </li>
+      <li>
+        <strong>Model-Based Systems Engineering (MBSE):</strong>
+        Knowledge in system architecture and integration; MBSE certification.
+      </li>
+    </ul>
 
     <div class="timeline-grid">
       <article
@@ -115,6 +181,18 @@ const toggleEntry = (id: number) => {
               {{ entry.details }}
             </p>
           </transition>
+          <div v-if="entry.links && entry.links.length" class="timeline-links">
+            <a
+              v-for="link in entry.links"
+              :key="link.url"
+              :href="link.url"
+              target="_blank"
+              rel="noopener"
+              class="timeline-link"
+            >
+              {{ link.label }}
+            </a>
+          </div>
         </div>
       </article>
     </div>

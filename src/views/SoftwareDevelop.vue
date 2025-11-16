@@ -15,46 +15,47 @@ type TimelineEntry = {
 const timeline = ref<TimelineEntry[]>([
   {
     id: 1,
-    year: '2018',
-    headline: 'Automation Curiosity',
-    context: 'First Python scripts to automate HVAC spreadsheets during internship.',
+    year: '2025',
+    headline: 'Website Design & Portfolio',
+    context: 'Vue 3 + TypeScript + Vite • Personal',
     summary:
-      'Wrote ad-hoc Python utilities to clean measurement data and generate reports, cutting repetitive work for the team.',
+      'Modern portfolio focused on motion, clarity, and storytelling with clean component systems.',
     details:
-      'Introduced version control with Git, documented mini-scripts for colleagues, and realized how software can unlock efficiency inside mechanical workflows.',
+      'Built responsive layouts, diagonal timeline, and subtle animation cues; optimized for performance and readability.',
     isOpen: false,
   },
   {
     id: 2,
-    year: '2020',
-    headline: 'Visualization in MATLAB',
-    context: 'Academic CFD coursework & early data dashboards.',
+    year: '2025',
+    headline: 'Webserv',
+    context:
+      'C++98 • HTTP/1.1 server • 42 Heilbronn • Repo: https://github.com/phlvnhalime/webserv',
     summary:
-      'Built MATLAB interfaces to visualize flow simulations and benchmark cooling layouts, translating raw numbers into actionable plots.',
+      'A from-scratch HTTP/1.1 server with non-blocking I/O, request parsing, and configurable virtual servers.',
     details:
-      'Collaborated with classmates to compare CFD scenarios, exported dashboards used in design reviews, and became the go-to person for data storytelling.',
+      'Implemented event loop, routing, CGI handling, and RFC-compliant parsing; focused on robustness and clear error handling.',
     isOpen: false,
   },
   {
     id: 3,
-    year: '2021',
-    headline: 'Mechanical Engineer + Code',
-    context: 'ONUK-BG Industrial Defense Inc.',
+    year: '2024',
+    headline: 'Minishell',
+    context: 'C • Shell • 42 Heilbronn • Repo: https://github.com/phlvnhalime/minishell',
     summary:
-      'Created CNC tracking tools blending mechanical expertise with Python scripting to reduce setup errors by 40%.',
+      'Bash-like shell supporting parsing, pipes, redirections, and heredocs with proper signal handling.',
     details:
-      'Automated NC code validation, implemented logging dashboards, and proved that full-stack thinking accelerates manufacturing decision-making.',
+      'Managed env variables, execve, and built-ins; implemented lexer/parser, job control basics, and memory-safe resource management.',
     isOpen: false,
   },
   {
     id: 4,
-    year: '2023',
-    headline: 'HVAC Analytics Toolkit',
-    context: 'TMS Industrial Refrigeration',
+    year: '2024',
+    headline: 'push_swap',
+    context: 'C • Algorithms • 42 Heilbronn • Repo: https://github.com/phlvnhalime/push_swap',
     summary:
-      'Delivered internal Python + Vue dashboards to accelerate HVAC performance analysis and equipment selection.',
+      'Sorting a stack with constrained operations using an O(n log n) strategy (radix/chunk methods).',
     details:
-      'Shipped REST APIs, automated reporting, interactive UI for engineers, and CI workflows that reduced lead time by 30% across projects.',
+      'Implemented two-stack operations (sa/sb/ss, pa/pb, ra/rb/rr, rra/rrb/rrr), optimized move counts, ensured norm compliance and memory safety.',
     isOpen: false,
   },
   {
@@ -63,27 +64,14 @@ const timeline = ref<TimelineEntry[]>([
     headline: '42 Heilbronn',
     context: 'Peer-to-peer software engineering school • Heilbronn, Germany',
     summary:
-      'Deep dive into algorithms, networking, graphics and low-level programming through intense project-based learning.',
+      'Admitted to the 42 program; intensive project-based learning across algorithms, networking, and systems.',
     details:
-      'Leading code reviews, building production-grade C projects, and mentoring peers while exploring creative front-end with Vue, TypeScript, and motion design.',
-    isOpen: false,
-  },
-  {
-    id: 6,
-    year: '2025',
-    headline: 'Immersive Portfolio & Experiments',
-    context: 'Self-directed R&D • Remote',
-    summary:
-      'Designing responsive storytelling experiences with shader effects, WebGL, and real-time animation systems.',
-    details:
-      'Experimenting with diagonal timelines, parallax interfaces, and data-driven narratives that celebrate the intersection of mechanical insight and software craft.',
+      'Collaboration-first environment, code reviews, production-grade C projects, and continuous self-directed learning.',
     isOpen: false,
   },
 ])
 
-const sortedTimeline = computed(() =>
-  [...timeline.value].sort((a, b) => Number(b.year) - Number(a.year)),
-)
+const sortedTimeline = computed(() => timeline.value)
 
 const toggleEntry = (id: number) => {
   timeline.value = timeline.value.map((entry) =>
@@ -114,21 +102,27 @@ const toggleEntry = (id: number) => {
         >
           GitHub
         </a>
-        <a
-          href="/HalimePehlivanResume-EN-SD.pdf"
-          target="_blank"
-          rel="noopener"
-          class="primary-link"
-        >
-          View Software Developer CV (PDF)
-        </a>
+        <a v-if="false" href="#" class="primary-link"> CV (PDF) </a>
       </div>
 
+      <h3 class="timeline-subtitle">Highlights</h3>
       <ul class="timeline-focus">
-        <li>Single-page apps with Vue 3 & Pinia</li>
-        <li>TypeScript-first component systems</li>
-        <li>Data visualization & storytelling</li>
-        <li>CI/CD, testing, and performance</li>
+        <li>
+          <strong>Core Systems Programming (C/C++):</strong>
+          Deep system programming skills in C, C++, and Unix/Linux environments.
+        </li>
+        <li>
+          <strong>Automation & Data Processing:</strong>
+          Automating complex processes with Python and C# (e.g., HVAC/R capacity calculations).
+        </li>
+        <li>
+          <strong>Sustainable Coding & DevOps:</strong>
+          Sustainable coding practices with Docker, Git, and CI/CD pipelines.
+        </li>
+        <li>
+          <strong>Algorithmic Problem Solving:</strong>
+          Solving complex problems with mathematical modeling and algorithmic approaches.
+        </li>
       </ul>
     </header>
 

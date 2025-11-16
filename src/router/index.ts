@@ -10,11 +10,6 @@ const router = createRouter({
       component: BrainConcept,
     },
     {
-      path: '/resume',
-      name: 'resume',
-      component: () => import('../views/ResumeView.vue'),
-    },
-    {
       path: '/software-developer',
       name: 'software-developer',
       component: () => import('../views/SoftwareDevelop.vue'),
