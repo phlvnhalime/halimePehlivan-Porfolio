@@ -41,7 +41,7 @@
   <section class="info-panel center-card" :class="{ 'is-open': showAboutPanel }">
     <button class="panel-close" type="button" @click="closePanels">×</button>
     <div class="panel-hero">
-      <img class="panel-avatar" src="/IMG_5782.png" alt="Halime Pehlivan" />
+      <img class="panel-avatar" :src="photo" alt="Halime Pehlivan" />
     </div>
     <h3 class="panel-title">About Me</h3>
     <p class="panel-text">
@@ -110,6 +110,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import './css/BrainConcept.css'
+import photo from '@/assets/IMG_5782.png'
 
 const showAboutPanel = ref(false)
 
