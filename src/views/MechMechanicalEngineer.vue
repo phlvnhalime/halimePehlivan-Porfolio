@@ -15,7 +15,7 @@ type TimelineEntry = {
 
 const timeline = ref<TimelineEntry[]>([
   {
-    id: 0,
+    id: 8,
     year: '2016',
     headline: 'Engineering Student',
     context: 'Zonguldak Bulent Ecevit University Faculty of Engineering • Turkey',
@@ -25,7 +25,7 @@ const timeline = ref<TimelineEntry[]>([
     isOpen: false,
   },
   {
-    id: 1,
+    id: 7,
     year: '2018',
     headline: 'Grizu-26 Space Team',
     context: 'Satellite systems & team-based R&D',
@@ -36,7 +36,7 @@ const timeline = ref<TimelineEntry[]>([
     isOpen: false,
   },
   {
-    id: 2,
+    id: 6,
     year: '2019',
     headline: 'CanSat Competition — World 2nd Place',
     context: 'AIAA / CanSat Competition',
@@ -47,7 +47,7 @@ const timeline = ref<TimelineEntry[]>([
     links: [{ label: 'CanSat Competition', url: 'https://www.cansatcompetition.com/' }],
   },
   {
-    id: 3,
+    id: 5,
     year: '2019',
     headline: 'TÜRKSAT Model Satellite — 1st Place',
     context: 'TÜRKSAT Model Satellite Competition',
@@ -70,7 +70,7 @@ const timeline = ref<TimelineEntry[]>([
     isOpen: false,
   },
   {
-    id: 5,
+    id: 3,
     year: '2021',
     headline: 'Graduated from Mechanical Engineering',
     context: 'Zonguldak Bulent Ecevit University Faculty of Engineering • Turkey',
@@ -79,7 +79,7 @@ const timeline = ref<TimelineEntry[]>([
     isOpen: false,
   },
   {
-    id: 6,
+    id: 2,
     year: '2021',
     headline: 'Mechanical Engineer',
     context: 'ONUK-BG Industrial Defense Inc • Istanbul, Turkey',
@@ -90,7 +90,7 @@ const timeline = ref<TimelineEntry[]>([
     isOpen: false,
   },
   {
-    id: 7,
+    id: 1,
     year: '2023',
     headline: 'Research & Development Engineer',
     context: 'TMS Industrial Refrigeration Inc • Istanbul, Turkey',
@@ -101,7 +101,7 @@ const timeline = ref<TimelineEntry[]>([
     isOpen: false,
   },
   {
-    id: 8,
+    id: 0,
     year: '2024',
     headline: 'Mechanical ↔ Software Bridge',
     context: 'Independent tools & automation',
