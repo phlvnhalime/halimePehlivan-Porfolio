@@ -42,7 +42,7 @@
     <div class="panel-hero">
       <img class="panel-avatar" :src="photo" />
     </div>
-    <h3 class="panel-title">About Me</h3>
+    <h3 class="panel-title">Halime Pehlivan</h3>
     <p class="panel-text">
       I blend mechanical engineering rigor with software craftsmanship to design efficient systems
       and intuitive digital experiences.
