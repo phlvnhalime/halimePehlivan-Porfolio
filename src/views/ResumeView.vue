@@ -506,25 +506,164 @@ const cvData = {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .resume-container {
+    margin-top: 60px;
+    padding: 1rem 0;
+  }
+
+  .resume-header {
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .download-btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
   .resume-content {
     padding: 1.5rem;
+    margin: 0 0.5rem;
+  }
+
+  .cv-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
   }
 
   .cv-header h1 {
     font-size: 1.75rem;
+    margin-bottom: 0.75rem;
   }
 
   .contact-info {
     font-size: 0.85rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .contact-info span {
     display: block;
+    text-align: center;
+  }
+
+  .cv-section {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   .job-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .job-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .company::before,
+  .location::before,
+  .duration::before {
+    content: '';
+  }
+
+  .company,
+  .location,
+  .duration {
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  .job-description {
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .education-item h3 {
+    font-size: 1rem;
+  }
+
+  .edu-details {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .skills-category h3 {
+    font-size: 0.95rem;
+  }
+
+  .skill-badge {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+    margin: 0.2rem;
+  }
+
+  .project-item h3 {
+    font-size: 1rem;
+  }
+
+  .project-item p {
+    font-size: 0.9rem;
+  }
+
+  .project-tech .tech {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .certifications-list li {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .languages {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-content {
+    padding: 1rem;
+    margin: 0 0.25rem;
+  }
+
+  .cv-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-info {
+    font-size: 0.8rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .job-header h3 {
+    font-size: 1rem;
+  }
+
+  .job-description {
+    font-size: 0.85rem;
+    padding-left: 1rem;
+  }
+
+  .skill-badge {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .project-item p {
+    font-size: 0.85rem;
   }
 }
 </style>

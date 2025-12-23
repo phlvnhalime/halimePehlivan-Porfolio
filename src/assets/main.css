@@ -4,6 +4,7 @@
   margin: 0 auto;
   font-weight: normal;
   width: 100%;
+  overflow-x: hidden;
 }
 
 a {
@@ -16,6 +17,13 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (prefers-color-scheme: light) {
@@ -27,5 +35,18 @@ body {
 @media (prefers-color-scheme: dark) {
   body {
     background: #181818;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
   }
 }

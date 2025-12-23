@@ -251,21 +251,52 @@
 
 @media (max-width: 768px) {
   .software-timeline {
-    padding: 3rem 1.5rem 4rem;
+    padding: 2rem 1rem 3rem;
   }
 
   .software-timeline .timeline-header {
-    gap: 1.5rem;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .software-timeline .timeline-heading h1 {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+  }
+
+  .software-timeline .timeline-intro {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: left;
   }
 
   .software-timeline .timeline-cta {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .software-timeline .timeline-cta .primary-link,
+  .software-timeline .timeline-cta .secondary-link {
+    width: 100%;
+    padding: 0.65rem 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  .software-timeline .timeline-focus {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .software-timeline .timeline-focus li {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    text-align: left;
   }
 
   .software-timeline .timeline-grid {
-    margin-top: 3rem;
-    gap: 2.5rem;
+    margin-top: 2rem;
+    gap: 2rem;
+    padding: 1.5rem 0 4rem;
   }
 
   .software-timeline .timeline-grid::before {
@@ -279,10 +310,96 @@
     grid-template-columns: auto 1fr;
     justify-items: start;
     transform: none;
+    gap: 1rem;
   }
 
   .software-timeline .timeline-entry .timeline-body,
   .software-timeline .timeline-entry.is-even .timeline-body {
     text-align: left;
+    max-width: 100%;
+    padding: 1.25rem;
+  }
+
+  .software-timeline .timeline-entry h2 {
+    font-size: 1.15rem;
+  }
+
+  .software-timeline .timeline-context {
+    font-size: 0.85rem;
+  }
+
+  .software-timeline .timeline-summary {
+    font-size: 0.9rem;
+  }
+
+  .software-timeline .timeline-details {
+    font-size: 0.88rem;
+  }
+
+  .software-timeline .timeline-toggle {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .software-timeline .timeline-year {
+    font-size: 0.9rem;
+  }
+
+  .software-timeline .timeline-node {
+    gap: 0.6rem;
+  }
+
+  .software-timeline .timeline-dot {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .software-timeline {
+    padding: 1.5rem 0.75rem 2.5rem;
+  }
+
+  .software-timeline .timeline-heading h1 {
+    font-size: 1.6rem;
+  }
+
+  .software-timeline .timeline-intro {
+    font-size: 0.9rem;
+  }
+
+  .software-timeline .timeline-cta .primary-link,
+  .software-timeline .timeline-cta .secondary-link {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .software-timeline .timeline-focus li {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.9rem;
+  }
+
+  .software-timeline .timeline-grid {
+    gap: 1.75rem;
+  }
+
+  .software-timeline .timeline-entry .timeline-body {
+    padding: 1rem;
+  }
+
+  .software-timeline .timeline-entry h2 {
+    font-size: 1.05rem;
+  }
+
+  .software-timeline .timeline-context {
+    font-size: 0.8rem;
+  }
+
+  .software-timeline .timeline-summary {
+    font-size: 0.85rem;
+  }
+
+  .software-timeline .timeline-details {
+    font-size: 0.83rem;
   }
 }
