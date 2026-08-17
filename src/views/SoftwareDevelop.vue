@@ -14,6 +14,28 @@ type TimelineEntry = {
 
 const timeline = ref<TimelineEntry[]>([
   {
+    id: 8,
+    year: '2026',
+    headline: 'DPaaS Cloud Platform — public learning',
+    context: '4-week build in public • OpenStack DevStack • Terraform • Go • React',
+    summary:
+      'I am building a Data-Platform-as-a-Service in four weeks, in public: users spin up data environments that sync with live analytics. Week 1 is the cloud lab. The rest is on the strike map.',
+    details:
+      'Week 1: local DevStack (UTM Ubuntu ARM64) + Terraform. Week 2: Kubernetes + Operator. Week 3: Go PaaS API + Databricks Bronze. Week 4: React UI, JWT, Gold layer, CI/CD. This is not a polished product page — it is the log of me owning the stack end to end.',
+    isOpen: false,
+  },
+  {
+    id: 7,
+    year: '2026',
+    headline: 'Full Stack Developer Intern — Bosch / ETAS',
+    context: 'Abstatt • Django REST • Python • React / Next.js • PostgreSQL • Docker',
+    summary:
+      'Production internship: REST APIs, middleware, and release automation for automotive middleware — not a classroom demo.',
+    details:
+      'Designed DRF APIs and relational schemas, built request/auth middleware, and shipped worker scripts in a real release pipeline. Frontend in React/Next.js. This is the job that followed two years of rebuilding from mechanical engineering into software.',
+    isOpen: false,
+  },
+  {
     id: 1,
     year: '2025',
     headline: 'Website Design & Portfolio',
@@ -99,10 +121,8 @@ const toggleEntry = (id: number) => {
         <p class="timeline-subtitle">Software Journey</p>
         <h1>Software Developer</h1>
         <p class="timeline-intro">
-          This timeline charts an ambitious evolution: a journey where a robust foundation in
-          mechanical engineering's advanced physics and mathematical modeling transitioned into the
-          rigorous world of software development, driven by an eagerness to tackle complex
-          algorithmic challenges and specialize in high-performance systems.
+          Mechanical engineer who rebuilt into software in two years. Right now I ship at Bosch/ETAS
+          and I am building DPaaS in public — four weeks, full-stack ownership, no hidden homework.
         </p>
       </div>
 
@@ -122,12 +142,16 @@ const toggleEntry = (id: number) => {
       <h3 class="timeline-subtitle">Highlights</h3>
       <ul class="timeline-focus">
         <li>
-          <strong>Core Systems Programming (C/C++):</strong>
-          Deep system programming skills in C, C++, and Unix/Linux environments.
+          <strong>DPaaS, in public:</strong>
+          Four-week build — OpenStack lab, Terraform, then Go API and React. Learning out loud.
         </li>
         <li>
-          <strong>Automation & Data Processing:</strong>
-          Automating complex processes with Python and C# (e.g., HVAC/R capacity calculations).
+          <strong>Production intern (Bosch / ETAS):</strong>
+          Django REST, React/Next.js, SQL, Docker, release automation.
+        </li>
+        <li>
+          <strong>Core Systems Programming (C/C++):</strong>
+          C, C++, and Unix/Linux from 42 Heilbronn.
         </li>
         <li>
           <strong>Sustainable Coding & DevOps:</strong>

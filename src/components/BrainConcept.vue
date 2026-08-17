@@ -44,13 +44,13 @@
     </div>
     <h3 class="panel-title">Halime Pehlivan</h3>
     <p class="panel-text">
-      I blend mechanical engineering rigor with software craftsmanship to design efficient systems
-      and intuitive digital experiences.
+      Mechanical engineer turned software developer. I intern at Bosch/ETAS and I am building a
+      DPaaS cloud platform in public over four weeks.
     </p>
     <ul class="panel-list">
-      <li>Mechanical design & thermal analysis</li>
-      <li>Frontend development with Vue & TypeScript</li>
-      <li>Collaborative, experiment-driven problem solving</li>
+      <li>Bosch / ETAS intern — Python, Django REST, React</li>
+      <li>DPaaS public learning — OpenStack, Go, React</li>
+      <li>42 Heilbronn — C/C++ and Unix</li>
     </ul>
     <div class="panel-icons" aria-label="Contact Links">
       <a
