@@ -2,7 +2,6 @@
 const printResume = () => {
   window.print()
 }
-// CV information extracted from HalimePehlivanResume-EN.pdf
 const cvData = {
   personalInfo: {
     name: 'Halime Pehlivan',
@@ -14,118 +13,184 @@ const cvData = {
     website: '',
   },
   summary:
-    'Research and Development Engineer specialized in cooling and refrigeration system design for Data Centers and industrial applications, including Ex-proof systems in compliance with ATEX standards. Experienced in mechanical design, CFD analysis, and thermal system optimization.',
+    'Full-stack developer shipping Python/Django REST APIs and React/Next.js interfaces in production-adjacent automotive software at Bosch/ETAS. I take features from refinement to working software: REST services, data models, UI, tests, and code review. Systems programming foundation in C/C++ and Unix from 42 Heilbronn, backed by a mechanical engineering degree and four years of industry experience in simulation, measurement, and reliability.',
 
   experience: [
     {
-      title: 'Research and Development Engineer',
-      company: 'TMS Industrial Refrigeration Inc',
-      location: 'Istanbul, Turkey',
-      duration: '2023 - 2024',
+      title: 'Full-Stack Developer Intern',
+      company: 'Bosch / ETAS',
+      location: 'Abstatt, Germany',
+      duration: '04/2026 - Present',
       description: [
-        'Specialized in cooling and refrigeration system design for Data Centers and industrial applications, including Ex-proof systems in compliance with ATEX standards',
-        'Performed capacity calculations, cooling load analysis, and system sizing to optimize performance and cost efficiency',
-        'Redesigned fan cell geometry and conducted CFD analysis (COMSOL), achieving a 15% increase in internal fan efficiency',
-        'Prepared material take-offs (MTO), design documentation, and P&IDs to support feasibility, concept, and detailed design phases',
-        'Developed in-house software tools to improve performance analysis and equipment selection for both standard and customized HVAC/R devices',
-        'Conducted feasibility studies and literature research on advanced cooling technologies, including Air-to-Air Heat Exchanger systems',
-        'Supervised post-production device testing and collaborated with sales and interdisciplinary teams to ensure technical requirements and client goals were met',
+        'Own slices of the stack: Django REST APIs, relational schemas, and React/Next.js interfaces for automotive middleware and release automation',
+        'Implement middleware for routing, authentication, and inter-service communication so backend and frontend share a stable contract',
+        'Contribute to automation, deployment, and monitoring of worker jobs in the release pipeline',
+        'Ship through an Agile/Scrum team using Git and Jira, writing maintainable code reviewed by senior engineers',
+      ],
+    },
+    {
+      title: 'Research and Development Engineer',
+      company: 'TMS Industrial Refrigeration Inc.',
+      location: 'Istanbul, Türkiye',
+      duration: '01/2023 - 01/2024',
+      description: [
+        'Built Python and C# tools that turned equipment and load data into sizing decisions for industrial and data center cooling systems',
+        'Processed test and CFD (COMSOL) results to improve reliability and efficiency, including a fan cell redesign that raised internal fan efficiency by 15%',
+        'Documented designs and calculation workflows so other engineers could reuse them',
       ],
     },
     {
       title: 'Mechanical Engineer',
-      company: 'ONUK-BG Industrial Defense Inc',
-      location: 'Istanbul, Turkey',
-      duration: '2021 - 2022',
+      company: 'ONUK-BG Industrial Defence Inc.',
+      location: 'Istanbul, Türkiye',
+      duration: '04/2021 - 09/2022',
       description: [
-        'Designed mechanical parts for defense systems using AutoCAD, CATIA, and Fusion 360',
-        'Developed corrosion-resistant molds and managed sheet metal bending and machining processes to produce durable components',
-        'Streamlined CNC programming and setup for 3-axis and 5-axis machines, completing a 1-month task in 15 days and enabling fully automated toolpaths without manual checks, which increased operational efficiency by 35%',
-        'Created a tool and NC code tracking system that improved setup accuracy and reduced human error by 40%',
+        'Developed an NC code tracking and optimization system, reducing human error by 25%',
+        'Optimized Siemens/Fanuc-compatible NC programming for 3-axis and 5-axis systems',
+        'Contributed to technical design and engineering processes for composite and naval structures',
       ],
     },
   ],
 
   education: [
     {
-      degree: 'Software Developer',
+      degree: 'Software Developer Program',
       school: '42 Heilbronn',
       location: 'Heilbronn, Germany',
-      duration: 'Present - Sep 2024',
+      duration: '07/2024 - Present',
       details:
-        'Project-based learning school, based on peer-to-peer learning. The 42 Program takes a project-based approach to progress and is designed to develop technical and people skills that match the expectations of the labor market.',
+        'Project-based curriculum in C, C++, TypeScript/web, and Unix with daily peer code review. Shipped full-stack and systems projects under peer evaluation.',
     },
     {
-      degree: 'Bachelor of Science in Mechanical Engineering',
-      school: 'Zonguldak Bulent Ecevit University Faculty of Engineering',
-      location: 'Turkey',
-      duration: '2016 - 2021',
-      details: '',
+      degree: 'B.Sc. Mechanical Engineering',
+      school: 'Zonguldak Bülent Ecevit University',
+      location: 'Zonguldak, Türkiye',
+      duration: '08/2016 - 02/2021',
+      details:
+        'Thesis on thermal performance and energy efficiency of heat pipes using phase-change materials (PCMs).',
     },
   ],
 
   skills: {
-    'CAD/CAE Tools': [
-      'CATIA',
-      'AutoCAD',
-      'SolidWorks',
-      'ANSYS (CFD)',
-      'COMSOL (CFD)',
-      'Fusion 360 (Manufacturing Process)',
+    'Languages': ['Python', 'TypeScript', 'JavaScript', 'C', 'C++', 'SQL', 'Bash'],
+    'Backend & APIs': [
+      'Django REST Framework',
+      'Fastify',
+      'Node.js',
+      'REST API Design',
+      'Authentication & Middleware',
+      'PostgreSQL',
+      'MySQL',
+      'Prisma',
     ],
-    'Programming & Debugging': [
-      'LLDB/GDB (Debugging)',
-      'Python',
-      'Shell Scripting',
-      'C Programming',
-      'C++',
+    'Frontend': ['React', 'Next.js', 'Vue 3', 'Vite', 'HTML5', 'CSS3'],
+    'Infrastructure & Delivery': [
+      'Docker',
+      'Git',
+      'CI/CD',
+      'Linux / Unix',
+      'Jira',
+      'Agile / Scrum',
     ],
-    'Development Tools': ['MATLAB', 'Git', 'Unix/Linux Environments'],
+    'Testing & Debugging': ['pytest', 'Code Review', 'GDB / LLDB', 'Valgrind'],
+    'Engineering & Analysis': ['MATLAB', 'COMSOL (CFD)', 'ANSYS', 'CATIA', 'SolidWorks', 'AutoCAD'],
   },
 
   projects: [
     {
-      name: 'Mechanical Design Optimization',
+      name: 'Wallet API — Multi-user Banking REST API',
       description:
-        'Redesigned fan cell geometry and achieved 15% increase in internal fan efficiency through CFD analysis',
-      technologies: ['COMSOL (CFD)', 'CATIA', 'Mechanical Design'],
+        'REST APIs for accounts, transactions, authentication, and permission management, with database models, migrations, and business logic in Django and PostgreSQL. Covered by pytest suites for endpoints, authentication flows, and transaction logic.',
+      technologies: ['Django', 'DRF', 'PostgreSQL', 'Docker', 'pytest'],
+      link: 'github.com/phlvnhalime',
     },
     {
-      name: 'CNC Programming & Tracking System',
+      name: 'Transcendence — Community Events Platform',
       description:
-        'Created tool and NC code tracking system, reducing human error by 40% and streamlining CNC operations',
-      technologies: ['CNC Programming', 'Python', 'Process Optimization'],
+        'Full-stack product with Fastify APIs covering auth, authorization, and rate limiting, a React/TypeScript client, and relational models designed in Prisma/MySQL. Shipped an event-management flow end to end.',
+      technologies: ['React', 'TypeScript', 'Fastify', 'MySQL', 'Prisma', 'Docker'],
+      link: 'github.com/phlvnhalime',
     },
     {
-      name: 'In-House Software Development',
+      name: 'Webserv — HTTP/1.1 Server',
       description:
-        'Developed software tools for performance analysis and equipment selection for HVAC/R devices',
-      technologies: ['Python', 'Software Development', 'Data Analysis'],
+        'HTTP/1.1 web server written from scratch in C++ with a non-blocking event loop, RFC-compliant request parsing, routing, CGI execution, and configurable virtual hosts.',
+      technologies: ['C++', 'Networking', 'Non-blocking I/O', 'CGI'],
+      link: 'github.com/phlvnhalime/webserv',
     },
+    {
+      name: 'Minishell — Unix Shell Implementation',
+      description:
+        'Bash-like shell in C with command parsing, pipes, redirections, and environment variables, built on Unix system calls (fork, execve, pipe, dup2) and debugged with LLDB/GDB and Valgrind.',
+      technologies: ['C', 'Unix / Linux', 'System Programming'],
+      link: 'github.com/phlvnhalime/minishell',
+    },
+    {
+      name: 'Philosophers — Concurrency',
+      description:
+        'Dining Philosophers problem solved with POSIX threads and mutexes, avoiding deadlock and starvation through resource ordering, a monitoring thread, and millisecond-accurate timing.',
+      technologies: ['C', 'Multithreading', 'Mutexes'],
+      link: 'github.com/phlvnhalime/philosophers',
+    },
+    {
+      name: 'push_swap — Algorithms',
+      description:
+        'Stack sorting under a constrained instruction set using an O(n log n) chunk/radix strategy, optimized for minimal move count.',
+      technologies: ['C', 'Algorithms', 'Complexity Optimization'],
+      link: 'github.com/phlvnhalime/push_swap',
+    },
+  ],
+
+  activities: [
+    {
+      role: 'Assistance Team Member',
+      organization: '42 Heilbronn',
+      duration: '07/2025 - 08/2025',
+      description: [
+        'Mentored peers on project methodologies and technical challenges',
+        'Supported onboarding and integration of new student cohorts',
+        'Contributed to technical and educational events',
+      ],
+    },
+    {
+      role: 'Mechanical Team Mentor',
+      organization: 'Grizu-263',
+      duration: '2020 - 2022',
+      description: [
+        'Mentored the mechanical team on CubeSat/CanSat development and system integration',
+        'Applied MATLAB for orbital mechanics simulation and worked on deployment systems and control algorithms',
+      ],
+    },
+  ],
+
+  awards: [
+    { name: '2nd Place — 42 Heilbronn × Make.com Hackathon', year: '06/2025' },
+    { name: '2nd Place — NASA CanSat Competition (Grizu-263 mechanical team)', year: '06/2019' },
+    { name: '1st Place — TURKSAT Model Satellite Competition (Grizu-263)', year: '09/2019' },
   ],
 
   certifications: [
     {
       name: 'ATEX Training',
-      issuer: 'IEP ENERGY PETROLEUM INSTITUTE',
+      issuer: 'IEP Energy Petroleum Institute',
       year: '',
     },
     {
       name: 'MBSE: Model Verified System',
-      issuer: 'University at Buffalo, The State University of New York, offered through Coursera',
+      issuer: 'University at Buffalo, State University of New York (Coursera)',
       year: '',
     },
     {
-      name: 'Digital manufacturing & design',
-      issuer: 'University at Buffalo, The State University of New York, offered through Coursera',
+      name: 'Digital Manufacturing & Design',
+      issuer: 'University at Buffalo, State University of New York (Coursera)',
       year: '',
     },
   ],
 
   languages: [
-    { language: 'English', level: 'C1' },
-    { language: 'German', level: 'A2' },
     { language: 'Turkish', level: 'Native' },
+    { language: 'English', level: 'C1' },
+    { language: 'German', level: 'B1' },
   ],
 }
 </script>
@@ -210,12 +275,42 @@ const cvData = {
       <section class="cv-section">
         <h2 class="section-title">Notable Projects</h2>
         <div v-for="(project, index) in cvData.projects" :key="index" class="project-item">
-          <h3>{{ project.name }}</h3>
+          <h3>
+            {{ project.name }}
+            <a v-if="project.link" :href="`https://${project.link}`" target="_blank" class="project-link">
+              {{ project.link }}
+            </a>
+          </h3>
           <p>{{ project.description }}</p>
           <div class="project-tech">
             <span class="tech" v-for="tech in project.technologies" :key="tech">{{ tech }}</span>
           </div>
         </div>
+      </section>
+
+      <!-- Leadership & Activities -->
+      <section class="cv-section">
+        <h2 class="section-title">Leadership &amp; Activities</h2>
+        <div v-for="(item, index) in cvData.activities" :key="index" class="experience-item">
+          <div class="job-header">
+            <h3>{{ item.role }}</h3>
+            <span class="company">{{ item.organization }}</span>
+            <span class="duration">{{ item.duration }}</span>
+          </div>
+          <ul class="job-description">
+            <li v-for="(desc, i) in item.description" :key="i">{{ desc }}</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Awards -->
+      <section class="cv-section">
+        <h2 class="section-title">Awards</h2>
+        <ul class="certifications-list">
+          <li v-for="(award, index) in cvData.awards" :key="index">
+            <strong>{{ award.name }}</strong> — {{ award.year }}
+          </li>
+        </ul>
       </section>
 
       <!-- Certifications -->
@@ -440,6 +535,18 @@ const cvData = {
   color: #1f2937;
   margin-bottom: 0.5rem;
   font-weight: 600;
+}
+
+.project-link {
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #6366f1;
+  text-decoration: none;
+}
+
+.project-link:hover {
+  text-decoration: underline;
 }
 
 .project-item p {
